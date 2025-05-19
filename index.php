@@ -8,11 +8,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="flicker-bg">
-  <!-- Hangende lamp bovenaan -->
-  <div class="hanging-lamp">
-    <img src="afbeeldingen/lamp.png">
-  </div>
+<body>
+
 
   <h1>Welkom bij Vault 666: Energy Contained</h1>
 

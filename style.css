@@ -7,6 +7,7 @@ body {
   background-color: #0b0b0b;
   color: #e0e0e0;
   background-image: url(afbeeldingen/evil\ screen.jpg);
+  background-position: center top;
   background-size: cover;
 }
 
@@ -58,39 +59,4 @@ a {
   80%  { opacity: 0.9; }
   90%  { opacity: 1; }
   100% { opacity: 1; }
-}
-
-
-.hanging-lamp {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  animation: sway 3s infinite ease-in-out;
-}
-
-.hanging-lamp img {
-  width: 80px;
-  animation: flickerLamp 2s infinite;
-  filter: brightness(1.2) drop-shadow(0 0 20px #ffffcc);
-}
-
-/* Beweging van de lamp (zwaaien) */
-@keyframes sway {
-  0% { transform: translateX(-50%) rotate(-2deg); }
-  50% { transform: translateX(-50%) rotate(2deg); }
-  100% { transform: translateX(-50%) rotate(-2deg); }
-}
-
-/* Flikkerend licht effect */
-@keyframes flickerLamp {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-    filter: brightness(1.2) drop-shadow(0 0 20px #ffffcc);
-  }
-  20%, 22%, 24%, 55% {
-    opacity: 0.4;
-    filter: brightness(0.5) drop-shadow(0 0 5px #999);
-  }
 }
