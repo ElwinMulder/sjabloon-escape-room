@@ -8,17 +8,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="flicker-bg">
+  <!-- Hangende lamp bovenaan -->
   <div class="hanging-lamp">
-  <img src="lamp.png" alt="Lamp">
+    <img src="afbeeldingen/lightbulb.png">
   </div>
 
   <h1>Welkom bij Vault 666: Energy Contained</h1>
-  <!-- De button hieronder is alleen voor testdoeleinden bij het opstarten van het project.
-     Deze pagina is bedoeld voor de uitleg van jullie escape room. -->
 
+  <!-- Startknop -->
   <button><a href="room_1.php">Klik hier om te beginnen!</a></button>
-
 </body>
 
 </html>
