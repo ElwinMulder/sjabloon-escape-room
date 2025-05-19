@@ -11,7 +11,7 @@
 <body class="flicker-bg">
   <!-- Hangende lamp bovenaan -->
   <div class="hanging-lamp">
-    <img src="afbeeldingen/lightbulb.png">
+    <img src="afbeeldingen/lamp.png">
   </div>
 
   <h1>Welkom bij Vault 666: Energy Contained</h1>
