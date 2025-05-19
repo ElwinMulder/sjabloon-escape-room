@@ -1,61 +1,96 @@
+/* Algemene stijl */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #0b0b0b;
+  color: #e0e0e0;
+  background-image: url(afbeeldingen/evil\ screen.jpg);
+  background-size: cover;
+}
+
+/* Titel */
+h1 {
+  font-size: 3em;
+  color: #39ff14; /* Monster Energy groen */
+  margin-top: 80px;
+  text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  animation: flicker 2s infinite;
+}
+
+/* Button */
+button {
+  margin-top: 40px;
+  padding: 15px 30px;
+  background-color: #111;
+  border: 2px solid #39ff14;
+  color: #39ff14;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #39ff14;
+}
+
+button:hover {
+  background-color: #39ff14;
+  color: #0b0b0b;
+  box-shadow: 0 0 20px #39ff14;
 }
 
 a {
-  color: black;
+  color: inherit;
   text-decoration: none;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 50px;
+/* Flicker effect */
+@keyframes flicker {
+  0%   { opacity: 1; }
+  10%  { opacity: 0.9; }
+  20%  { opacity: 0.95; }
+  30%  { opacity: 0.85; }
+  40%  { opacity: 1; }
+  50%  { opacity: 0.9; }
+  60%  { opacity: 1; }
+  70%  { opacity: 0.95; }
+  80%  { opacity: 0.9; }
+  90%  { opacity: 1; }
+  100% { opacity: 1; }
 }
 
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: #3498db;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 8px;
-}
 
-.box:hover {
-  background-color: #2980b9;
-}
-
-.overlay {
+.hanging-lamp {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  display: none;
-  width: 300px;
+  transform: translateX(-50%);
+  z-index: 10;
+  animation: sway 3s infinite ease-in-out;
 }
 
-button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
+.hanging-lamp img {
+  width: 80px;
+  animation: flickerLamp 2s infinite;
+  filter: brightness(1.2) drop-shadow(0 0 20px #ffffcc);
+}
+
+/* Beweging van de lamp (zwaaien) */
+@keyframes sway {
+  0% { transform: translateX(-50%) rotate(-2deg); }
+  50% { transform: translateX(-50%) rotate(2deg); }
+  100% { transform: translateX(-50%) rotate(-2deg); }
+}
+
+/* Flikkerend licht effect */
+@keyframes flickerLamp {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    filter: brightness(1.2) drop-shadow(0 0 20px #ffffcc);
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.4;
+    filter: brightness(0.5) drop-shadow(0 0 5px #999);
+  }
 }
