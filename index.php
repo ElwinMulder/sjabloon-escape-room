@@ -15,7 +15,6 @@
 
   <h1>Welkom bij Vault 666: Energy Contained</h1>
 
-  <!-- Startknop -->
   <button><a href="room_1.php">Klik hier om te beginnen!</a></button>
 </body>
 

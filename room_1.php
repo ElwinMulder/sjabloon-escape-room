@@ -25,7 +25,6 @@ try {
 
   <div class="container">
     <?php foreach ($questions as $index => $question) : ?>
-      <!-- de php code in de class zorgt ervoor dat elke box uniek is zodat je deze apart kunt stylen. Zo krijg je dus box1, box2 en box3 -->
       <div class="box box<?php echo $index + 1; ?>" onclick="openModal(<?php echo $index; ?>)"
         data-index="<?php echo $index; ?>" data-question="<?php echo htmlspecialchars($question['question']); ?>"
         data-answer="<?php echo htmlspecialchars($question['answer']); ?>">
