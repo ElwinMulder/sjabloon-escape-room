@@ -7,6 +7,8 @@
   <title>Escape Room</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script src="timer.js" defer></script>
+<div id="timer" style="position: fixed; top: 20px; right: 20px; font-size: 24px; color: red; z-index: 9999;"></div>
 
 <body>
 
