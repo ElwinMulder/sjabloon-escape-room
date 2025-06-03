@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION["kamer_2_toegang"])) {
+  header("Location: room_1.php");
+  exit;
+}
+?>
+
 require_once('./dbcon.php');
 
 try {
@@ -22,6 +29,13 @@ try {
 </head>
 
 <body>
+<nav>
+  <ul>
+    <li><a href="index.php">Startpagina</a></li>
+    <li><a href="room_1.php">Kamer 1</a></li>
+    <li><a href="room_2.php">Kamer 2</a></li>
+  </ul>
+</nav>
 
   <div class="container">
     <?php foreach ($questions as $index => $question) : ?>

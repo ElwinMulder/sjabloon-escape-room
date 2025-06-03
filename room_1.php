@@ -22,7 +22,17 @@ try {
 </head>
 
 <body>
-
+<nav>
+  <ul>
+    <li><a href="index.php">Startpagina</a></li>
+    <li><a href="room_1.php">Kamer 1</a></li>
+  
+  </ul>
+</nav>
+<?php session_start(); ?>
+<?php if (isset($_SESSION["kamer_2_toegang"])): ?>
+  <li><a href="room_2.php">Kamer 2</a></li>
+<?php endif; ?>
   <div class="container">
     <?php foreach ($questions as $index => $question) : ?>
       <div class="box box<?php echo $index + 1; ?>" onclick="openModal(<?php echo $index; ?>)"
