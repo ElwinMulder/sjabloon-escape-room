@@ -1,4 +1,5 @@
 <?php
+
 require_once('./dbcon.php');
 
 try {
@@ -11,6 +12,7 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
+<script src="js/timer.js"></script>
 
 <head>
   <meta charset="UTF-8">
@@ -20,6 +22,8 @@ try {
 </head>
 
 <body onload="startTimer()">
+<div id="timer">05:00</div>
+
 
 <nav>
   <ul>
