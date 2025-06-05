@@ -1,4 +1,4 @@
-let timeLeft = 60;
+let timeLeft = 300;
 let timerInterval;
 
 function startTimer() {
@@ -6,7 +6,7 @@ function startTimer() {
   if (!timerElement) return;
 
   clearInterval(timerInterval);
-  timeLeft = 60;
+  timeLeft = 300;
 
   timerInterval = setInterval(() => {
     const minutes = Math.floor(timeLeft / 60);

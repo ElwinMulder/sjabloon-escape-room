@@ -30,7 +30,7 @@ try {
     }</style>
 </head>
 <body onload="startTimer()">
-  <div id="timer" style="font-size: 2em; font-weight: bold;">1:00</div>
+  <div id="timer" style="font-size: 2em; font-weight: bold;">5:00</div>
 
   <nav>
     <ul>
