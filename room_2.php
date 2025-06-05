@@ -4,7 +4,6 @@ if (!isset($_SESSION["kamer_2_toegang"])) {
   header("Location: room_1.php");
   exit;
 }
-?>
 
 require_once('./dbcon.php');
 
