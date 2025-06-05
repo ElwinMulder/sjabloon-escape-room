@@ -43,6 +43,9 @@ try {
 
   <nav>
     <ul>
+      <li><a href="index.php">Startpagina</a></li>
+      <li><a href="room_1.php">Kamer 1</a></li>
+      <?php session_start(); ?>
       <?php if (isset($_SESSION["kamer_2_toegang"])): ?>
         <li><a href="room_2.php">Kamer 2</a></li>
       <?php endif; ?>
@@ -71,4 +74,10 @@ try {
 
   <script src="app.js"></script>
   <script src="timer.js"></script>
+  <script>
+  function doorgaanNaarKamer2() {
+    window.location.href = "room_2.php";
+  }
+</script>
+
 </body>

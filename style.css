@@ -101,3 +101,27 @@ nav ul li a:hover {
   font-weight: bold;
   color: #00ff88;
 }
+
+.box1 {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.box2 {
+  position: absolute;
+  top: 400px;
+  left: 750px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.box3 {
+  position: absolute;
+  top: 600px;
+  left: 300px;
+  opacity: 1;
+  cursor: pointer;
+}
