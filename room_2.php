@@ -15,19 +15,17 @@ try {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<script src="timer.js" defer></script>
-<div id="timer" style="position: fixed; top: 20px; right: 20px; font-size: 24px; color: red; z-index: 9999;"></div>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script src="js/timer.js"></script>
 
 <body>
+<body onload="resetAndStartTimer()">
+
 <nav>
   <ul>
     <li><a href="index.php">Startpagina</a></li>

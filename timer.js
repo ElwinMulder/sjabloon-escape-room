@@ -1,10 +1,11 @@
+
 let timerInterval;
-let timeLeft = 60;
+let timeLeft = 300;
 
 function startTimer() {
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
-    if (timeLeft <= 0) {
+    if (timeLeft <= 300) {
       clearInterval(timerInterval);
       // Voeg hier code toe om te navigeren naar een 'verloren' scherm of een andere actie
     } else {
@@ -19,3 +20,9 @@ function formatTime(seconds) {
   const secs = seconds % 60;
   return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
 }
+
+function resetAndStartTimer() {
+  timeLeft = 300;
+  startTimer();
+}
+
