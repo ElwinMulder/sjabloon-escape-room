@@ -18,22 +18,31 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room 1</title>
   <link rel="stylesheet" href="style.css">
+  <style>body {
+      background-color: #0b0b0b;
+      background-image: url("afbeeldingen/room-1.jpg");
+      background-size: cover;
+      color: #00ff88;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding-top: 100px;
+    }</style>
 </head>
-<script src="js/timer.js"></script>
 <body onload="startTimer()">
-<div id="timer" style="font-size: 2em; font-weight: bold;">1:00</div>
+  <div id="timer" style="font-size: 2em; font-weight: bold;">1:00</div>
 
-<nav>
-  <ul>
-    <li><a href="index.php">Startpagina</a></li>
-    <li><a href="room_1.php">Kamer 1</a></li>
-  
-  </ul>
-</nav>
-<?php session_start(); ?>
-<?php if (isset($_SESSION["kamer_2_toegang"])): ?>
-  <li><a href="room_2.php">Kamer 2</a></li>
-<?php endif; ?>
+  <nav>
+    <ul>
+      <li><a href="index.php">Startpagina</a></li>
+      <li><a href="room_1.php">Kamer 1</a></li>
+      <?php session_start(); ?>
+      <?php if (isset($_SESSION["kamer_2_toegang"])): ?>
+        <li><a href="room_2.php">Kamer 2</a></li>
+      <?php endif; ?>
+    </ul>
+  </nav>
+
   <div class="container">
     <?php foreach ($questions as $index => $question) : ?>
       <div class="box box<?php echo $index + 1; ?>" onclick="openModal(<?php echo $index; ?>)"
@@ -55,7 +64,5 @@ try {
   </section>
 
   <script src="app.js"></script>
-
+  <script src="timer.js"></script>
 </body>
-
-</html>
