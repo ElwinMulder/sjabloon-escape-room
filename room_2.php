@@ -20,6 +20,16 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room 2</title>
   <link rel="stylesheet" href="style.css">
+  <style><style>body {
+      background-color: #0b0b0b;
+      background-image: url("afbeeldingen/room-2.jpg");
+      background-size: cover;
+      color: #00ff88;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding-top: 100px;
+    }</style></style>
 </head>
 <script src="js/timer.js"></script>
 
