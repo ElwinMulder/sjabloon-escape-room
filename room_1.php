@@ -8,8 +8,6 @@ try {
   die("Databasefout: " . $e->getMessage());
 }
 ?>
-<script src="timer.js" defer></script>
-<div id="timer" style="position: fixed; top: 20px; right: 20px; font-size: 24px; color: red; z-index: 9999;"></div>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +19,8 @@ try {
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="startTimer()">
+
 <nav>
   <ul>
     <li><a href="index.php">Startpagina</a></li>
