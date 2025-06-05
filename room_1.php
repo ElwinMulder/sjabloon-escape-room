@@ -31,15 +31,8 @@ try {
     }</style>
 </head>
 
-<<<<<<< HEAD
+
 <body>
-  
-=======
-<body onload="startTimer()">
-<div id="timer">05:00</div>
-
-
->>>>>>> 613e8060584298089b4951c27cd7887ab3423fc1
 <nav>
   <ul>
     <li><a href="index.php">Startpagina</a></li>
