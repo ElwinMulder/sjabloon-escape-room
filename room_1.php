@@ -12,7 +12,6 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
-<script src="js/timer.js"></script>
 
 <head>
   <meta charset="UTF-8">
@@ -20,10 +19,9 @@ try {
   <title>Escape Room 1</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
+<script src="js/timer.js"></script>
 <body onload="startTimer()">
-<div id="timer">05:00</div>
-
+<div id="timer" style="font-size: 2em; font-weight: bold;">1:00</div>
 
 <nav>
   <ul>
