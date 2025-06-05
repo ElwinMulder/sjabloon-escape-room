@@ -7,9 +7,8 @@
   <style>
     body {
       background-color: #0b0b0b;
-      background-image: url("afbeeldingen/winscherm.png");
+      background-image: url("afbeeldingen/win-screen.jpeg");
       background-size: cover;
-      background-position: center;
       color: #00ff88;
       font-family: 'Arial', sans-serif;
       text-align: center;
