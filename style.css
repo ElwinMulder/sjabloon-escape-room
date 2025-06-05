@@ -85,3 +85,19 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+#timer-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+#timer {
+  font-size: 2em;
+  font-weight: bold;
+  color: #00ff88;
+}

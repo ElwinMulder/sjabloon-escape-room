@@ -1,28 +1,23 @@
-
-let timerInterval;
 let timeLeft = 300;
+let timerInterval;
 
 function startTimer() {
+  const timerElement = document.getElementById("timer");
+  if (!timerElement) return;
+
   clearInterval(timerInterval);
+  timeLeft = 300;
+
   timerInterval = setInterval(() => {
-    if (timeLeft <= 300) {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+    if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      // Voeg hier code toe om te navigeren naar een 'verloren' scherm of een andere actie
-    } else {
-      timeLeft--;
-      document.getElementById("timer").innerText = formatTime(timeLeft);
+      alert("Tijd is op!");
     }
+
+    timeLeft--;
   }, 1000);
 }
-
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const secs = seconds % 60;
-  return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-}
-
-function resetAndStartTimer() {
-  timeLeft = 300;
-  startTimer();
-}
-
