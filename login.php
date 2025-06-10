@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -6,19 +10,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST["password"]);
 
     $users = file("users.txt", FILE_IGNORE_NEW_LINES);
+    $found = false;
 
     foreach ($users as $user) {
         list($savedUser, $savedHash) = explode(":", $user);
         if ($savedUser === $username && password_verify($password, $savedHash)) {
+            $found = true;
             $_SESSION["username"] = $username;
             header("Location: index.php");
             exit;
         }
     }
 
-    $error = "Ongeldige inloggegevens.";
+    if (!$found) {
+        $error = "Ongeldige inloggegevens.";
+    }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="nl">
@@ -63,9 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
         }
         .error {
             color: red;
