@@ -6,7 +6,7 @@ body {
   padding: 0;
   background-color: #0b0b0b;
   color: #e0e0e0;
-  background-image: url(afbeeldingen/evil\ screen.jpg);
+  background-image: url(afbeeldingen/room-1.jpg);
   background-position: center top;
   background-size: cover;
 }
@@ -124,4 +124,28 @@ nav ul li a:hover {
   left: 300px;
   opacity: 1;
   cursor: pointer;
+}
+
+#question-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.box2 {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+}
+
+.box3 {
+  position: absolute;
+  top: 75%;
+  left: 30%;
 }
