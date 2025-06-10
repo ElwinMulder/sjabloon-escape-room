@@ -1,39 +1,30 @@
 <?php
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 
-    if (!empty($username) && !empty($password)) {
-        if (!file_exists("users.txt")) {
-            file_put_contents("users.txt", ""); // Maak bestand aan als het nog niet bestaat
-        }
-        $users = file("users.txt", FILE_IGNORE_NEW_LINES);
+    $users = file("users.txt", FILE_IGNORE_NEW_LINES);
 
-        foreach ($users as $user) {
-            list($savedUser, ) = explode(":", $user);
-            if ($savedUser === $username) {
-                $error = "Gebruiker bestaat al.";
-                break;
-            }
-        }
-
-        if (empty($error)) {
-            $hashed = password_hash($password, PASSWORD_DEFAULT);
-            file_put_contents("users.txt", "$username:$hashed\n", FILE_APPEND);
-            header("Location: login.php?success=1");
+    foreach ($users as $user) {
+        list($savedUser, $savedHash) = explode(":", $user);
+        if ($savedUser === $username && password_verify($password, $savedHash)) {
+            $_SESSION["username"] = $username;
+            header("Location: index.php");
             exit;
         }
-    } else {
-        $error = "Vul alle velden in.";
     }
+
+    $error = "Ongeldige inloggegevens.";
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8" />
-    <title>Registreren</title>
+    <meta charset="UTF-8">
+    <title>Inloggen</title>
     <style>
         body {
     margin: 0;
@@ -48,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     background-position: center;
     position: relative;
 }
-        .register-container {
+
+        .login-container {
             background: white;
             padding: 30px;
             border-radius: 10px;
@@ -66,38 +58,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         input[type="submit"] {
             width: 95%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #218838;
+            background-color: #0056b3;
         }
         .error {
             color: red;
             margin-bottom: 10px;
         }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+        .success {
+            color: green;
         }
     </style>
 </head>
 <body>
-    <div class="register-container">
-        <h2>Registreren</h2>
+    <div class="login-container">
+        <h2>Inloggen</h2>
+        <?php if (isset($_GET['success'])): ?>
+            <p class="success">Registratie succesvol! Log nu in.</p>
+        <?php endif; ?>
+
         <?php if (!empty($error)) echo "<p class='error'>$error</p>"; ?>
+
         <form method="post">
-            <input type="text" name="username" placeholder="Gebruikersnaam" required><br />
-            <input type="password" name="password" placeholder="Wachtwoord" required><br />
-            <input type="submit" value="Registreren" />
+            <input type="text" name="username" placeholder="Gebruikersnaam" required><br>
+            <input type="password" name="password" placeholder="Wachtwoord" required><br>
+            <input type="submit" value="Inloggen">
         </form>
-        <p>Al een account? <a href="login.php">Log hier in</a></p>
+        <p>Nog geen account? <a href="register.php">Registreer hier</a></p>
     </div>
 </body>
 </html>
