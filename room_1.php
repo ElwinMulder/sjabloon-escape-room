@@ -20,6 +20,7 @@ try {
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
+      background-image: url(afbeeldingen/room-1.jpg);
       background-color: #0b0b0b;
       color: #00ff88;
       font-family: Arial, sans-serif;
@@ -47,7 +48,7 @@ try {
       text-align: center;
     }
     .box1 { top: 20%; left: 10%; }
-    .box2 { top: 50%; left: 70%; }
+    .box2 { top: 70%; left: 59%; }
     .box3 { top: 75%; left: 30%; }
 
     #modal, #overlay {
