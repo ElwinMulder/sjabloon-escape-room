@@ -125,3 +125,27 @@ nav ul li a:hover {
   opacity: 1;
   cursor: pointer;
 }
+
+#question-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.box2 {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+}
+
+.box3 {
+  position: absolute;
+  top: 75%;
+  left: 30%;
+}
