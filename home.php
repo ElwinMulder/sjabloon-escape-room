@@ -1,12 +1,12 @@
 <?php
-session_start();
+require_once( session_start()
 
 // Controleer of de gebruiker is ingelogd
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     // Als niet ingelogd, stuur door naar login.php
     header('Location: login.php');
     exit;
-}
+});
 ?>
 <!DOCTYPE html>
 <html lang="en">
