@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,22 +6,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST["password"]);
 
     $users = file("users.txt", FILE_IGNORE_NEW_LINES);
-    $found = false;
 
     foreach ($users as $user) {
         list($savedUser, $savedHash) = explode(":", $user);
         if ($savedUser === $username && password_verify($password, $savedHash)) {
-            $found = true;
             $_SESSION["username"] = $username;
-            $_SESSION["logged_in"] = true; // ✅ Toegevoegd
             header("Location: index.php");
             exit;
         }
     }
 
-    if (!$found) {
-        $error = "Ongeldige inloggegevens.";
-    }
+    $error = "Ongeldige inloggegevens.";
 }
 ?>
 
@@ -36,18 +27,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Inloggen</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url(afbeeldingen/loading.png);
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(afbeeldingen/loading.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
 
         .login-container {
             background: white;
@@ -75,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 5px;
             cursor: pointer;
         }
-
         .error {
             color: red;
             margin-bottom: 10px;
@@ -104,3 +94,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
+
+
