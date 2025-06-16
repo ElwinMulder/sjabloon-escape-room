@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         list($savedUser, $savedHash) = explode(":", $user);
         if ($savedUser === $username && password_verify($password, $savedHash)) {
             $_SESSION["username"] = $username;
+            $_SESSION["logged_in"] = true; 
             header("Location: index.php");
             exit;
         }
@@ -19,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $error = "Ongeldige inloggegevens.";
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="nl">
