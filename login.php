@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($savedUser === $username && password_verify($password, $savedHash)) {
             $found = true;
             $_SESSION["username"] = $username;
+            $_SESSION["logged_in"] = true; // ✅ Toegevoegd
             header("Location: index.php");
             exit;
         }
@@ -28,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -36,18 +36,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Inloggen</title>
     <style>
         body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(afbeeldingen/loading.png);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(afbeeldingen/loading.png);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
 
         .login-container {
             background: white;
@@ -57,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 300px;
             text-align: center;
         }
+
         input[type="text"], input[type="password"] {
             width: 90%;
             padding: 10px;
@@ -64,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         input[type="submit"] {
             width: 95%;
             padding: 10px;
@@ -73,10 +75,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 5px;
             cursor: pointer;
         }
+
         .error {
             color: red;
             margin-bottom: 10px;
         }
+
         .success {
             color: green;
         }
@@ -100,5 +104,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
-
-
